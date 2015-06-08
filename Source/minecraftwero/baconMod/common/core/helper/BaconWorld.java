@@ -1,4 +1,4 @@
-package minecraftwero.bacon.common.core.helper;
+package minecraftwero.baconMod.common.core.helper;
 
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;

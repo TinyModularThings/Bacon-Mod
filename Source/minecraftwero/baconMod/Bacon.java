@@ -1,4 +1,4 @@
-package com.minecraftwero.bacon;
+package minecraftwero.bacon;
 
 import java.io.File;
 
