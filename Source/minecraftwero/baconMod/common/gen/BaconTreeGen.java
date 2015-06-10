@@ -128,8 +128,7 @@ public class BaconTreeGen extends WorldGenerator
 
                                 if (Math.abs(k2) != i2 || Math.abs(i3) != i2 || par2Random.nextInt(2) != 0 && k1 != 0)
                                 {
-                                    int j3 = par1World.getBlockMetadata(j2, j1, l2);
-                                    Block block = Block.blocksList[j3];
+                                    Block block = par1World.getBlock(j2, j1, l2);
 
                                     if (block == null || block.canBeReplacedByLeaves(par1World, j2, j1, l2))
                                     {
@@ -142,9 +141,8 @@ public class BaconTreeGen extends WorldGenerator
 
                     for (j1 = 0; j1 < l; ++j1)
                     {
-                        k1 = par1World.getBlockMetadata(par3, par4 + j1, par5);
 
-                        Block block = Block.blocksList[k1];
+                        Block block = par1World.getBlock(par3, par4 + j1, par5);
 
                         if (k1 == 0 || block == null || block.isLeaves(par1World, par3, par4 + j1, par5))
                         {
