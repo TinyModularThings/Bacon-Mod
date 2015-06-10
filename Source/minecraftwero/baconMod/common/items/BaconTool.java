@@ -19,7 +19,7 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 import com.google.common.collect.Multimap;
 import com.ibm.icu.util.BytesTrie.Result;
-import com.minecraftwero.bacon.Bacon;
+import minecraftwero.baconMod.Bacon;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

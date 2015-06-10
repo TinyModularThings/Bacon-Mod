@@ -35,7 +35,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.minecraftwero.bacon.Bacon;
+import minecraftwero.baconMod.Bacon;
 
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.Side;
@@ -655,9 +655,8 @@ public class BlockBaconMaker extends BlockContainer implements IShearable
                         {
                             for (j2 = -b0; j2 <= b0; ++j2)
                             {
-                                k2 = par0.getBlockMetadata(par2 + l1, par3 + i2, par4 + j2);
 
-                                Block block = Block.blocksList[k2];
+                                Block block = par0.getBlock(par2 + l1, par3 + i2, par4 + j2);
 
                                 if (block != null && block.canSustainLeaves(par0, par2 + l1, par3 + i2, par4 + j2))
                                 {

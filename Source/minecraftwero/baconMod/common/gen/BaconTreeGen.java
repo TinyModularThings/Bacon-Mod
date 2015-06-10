@@ -5,6 +5,7 @@ import java.util.Random;
 import minecraftwero.baconMod.common.config.BaconItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -73,15 +74,14 @@ public class BaconTreeGen extends WorldGenerator
                     {
                         if (i1 >= 0 && i1 < 256)
                         {
-                            k1 = par1World.getBlockMetadata(l1, i1, j1);
 
-                            Block block = Block.blocksList[k1];
+                            Block block = par1World.getBlock(l1, i1, j1);
                             boolean isAir = par1World.isAirBlock(l1, i1, j1);
 
                             if (!isAir &&
                                !block.isLeaves(par1World, l1, i1, j1) &&
-                                k1 != Block.grass.blockID &&
-                                k1 != Block.dirt.blockID &&
+                                block != Blocks.grass &&
+                                block != Blocks.dirt &&
                                !block.isWood(par1World, l1, i1, j1))
                             {
                                 flag = false;
@@ -101,9 +101,8 @@ public class BaconTreeGen extends WorldGenerator
             }
             else
             {
-                i1 = par1World.getBlockMetadata(par3, par4 - 1, par5);
-                Block soil = Block.blocksList[i1];
-                boolean isSoil = (soil != null && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)Block.sapling));
+                Block soil = par1World.getBlock(par3, par4 - 1, par5);
+                boolean isSoil = (soil != Blocks.air && soil.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)Blocks.sapling));
 
                 if (isSoil && par4 < 256 - l - 1)
                 {
@@ -187,7 +186,7 @@ public class BaconTreeGen extends WorldGenerator
                             {
                                 for (k2 = par5 - i2; k2 <= par5 + i2; ++k2)
                                 {
-                                    Block block = Block.blocksList[par1World.getBlockMetadata(j2, j1, k2)];
+                                    Block block = par1World.getBlock(j2, j1, k2);
                                     if (block != null && block.isLeaves(par1World, j2, j1, k2))
                                     {
                                         if (par2Random.nextInt(4) == 0 && par1World.isAirBlock(j2 - 1, j1, k2))
