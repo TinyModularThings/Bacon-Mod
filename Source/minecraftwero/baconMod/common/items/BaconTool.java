@@ -1,5 +1,6 @@
 package minecraftwero.baconMod.common.items;
 
+import minecraftwero.baconMod.Bacon;
 import minecraftwero.baconMod.common.config.BaconItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -7,6 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,7 +21,6 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 import com.google.common.collect.Multimap;
 import com.ibm.icu.util.BytesTrie.Result;
-import minecraftwero.baconMod.Bacon;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -170,7 +171,7 @@ public class BaconTool extends Item
             int i1 = par3World.getBlockMetadata(par4, par5, par6);
             int j1 = par3World.getBlockMetadata(par4, par5 + 1, par6);
 
-            if ((par7 == 0 || j1 != 0 || i1 != Block.grass.blockID) && i1 != Block.dirt.blockID)
+            if ((par7 == 0 || j1 != 0 || i1 != Blocks.grass.blockID) && i1 != Blocks.dirt.blockID)
             {
                 return false;
             }

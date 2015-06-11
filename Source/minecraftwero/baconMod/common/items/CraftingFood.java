@@ -1,7 +1,6 @@
 package minecraftwero.baconMod.common.items;
 
-import com.minecraftwero.bacon.Bacon;
-
+import minecraftwero.baconMod.Bacon;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;

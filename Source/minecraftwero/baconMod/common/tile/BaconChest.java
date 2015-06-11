@@ -6,11 +6,9 @@ import minecraftwero.baconMod.common.lib.IExpBottle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-
-import com.minecraftwero.bacon.common.tile.TileEntityBacon;
-
 import cpw.mods.fml.common.FMLLog;
 
 public class BaconChest extends TileEntityBacon implements IInventory
@@ -22,7 +20,7 @@ public class BaconChest extends TileEntityBacon implements IInventory
     public void readFromNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.readFromNBT(par1NBTTagCompound);
-        NBTTagList nbttaglist = par1NBTTagCompound.getTagList("Items");
+        NBTBase nbttaglist = par1NBTTagCompound.getTag("Items");
         this.inventory = new ItemStack[this.getSizeInventory()];
 
         for (int i = 0; i < nbttaglist.tagCount(); ++i)
@@ -133,14 +131,12 @@ public class BaconChest extends TileEntityBacon implements IInventory
 	    }
 
 
-	@Override
 	public String getInvName() 
 	{
 
 		return "Bacon Chest";
 	}
 
-	@Override
 	public boolean isInvNameLocalized() {
 		
 		return false;
@@ -158,12 +154,10 @@ public class BaconChest extends TileEntityBacon implements IInventory
 		return true;
 	}
 
-	@Override
 	public void openChest() 
 	{
 	}
 
-	@Override
 	public void closeChest() 
 	{
 	}
@@ -221,5 +215,33 @@ public class BaconChest extends TileEntityBacon implements IInventory
 				}
 			}
 		}
+	}
+
+
+	@Override
+	public String getInventoryName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean hasCustomInventoryName() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void openInventory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void closeInventory() {
+		// TODO Auto-generated method stub
+		
 	}
 }

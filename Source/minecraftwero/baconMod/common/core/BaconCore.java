@@ -1,5 +1,6 @@
 package minecraftwero.baconMod.common.core;
 
+import minecraftwero.baconMod.Bacon;
 import minecraftwero.baconMod.client.gui.GuiBaconChest;
 import minecraftwero.baconMod.client.gui.GuiBaconMaker;
 import minecraftwero.baconMod.client.gui.GuiHeater;
@@ -20,9 +21,6 @@ import net.minecraft.entity.projectile.EntityEgg;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
-
-import com.minecraftwero.bacon.Bacon;
-
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;

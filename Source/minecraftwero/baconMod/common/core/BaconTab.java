@@ -3,6 +3,9 @@ package minecraftwero.baconMod.common.core;
 import minecraftwero.baconMod.common.config.BaconItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+
+import com.sun.tools.javac.jvm.Items;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,11 +22,11 @@ public class BaconTab extends CreativeTabs
 	{
 		if(BaconItems.rawBacon != null)
 		{
-			return BaconItems.rawBacon.itemID;
+			return BaconItems.rawBacon.getIdFromItem(getTabIconItem());
 		}
 		else if(BaconItems.cookedBacon != null)
 		{
-			return BaconItems.cookedBacon.itemID;
+			return BaconItems.cookedBacon.getIdFromItem(getTabIconItem());
 		}
 		else
 		{

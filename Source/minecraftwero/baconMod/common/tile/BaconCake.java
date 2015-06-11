@@ -4,8 +4,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.world.World;
 
-import com.minecraftwero.bacon.common.tile.TileEntityBacon;
-
 
 public class BaconCake extends TileEntityBacon 
 {
@@ -57,7 +55,7 @@ public class BaconCake extends TileEntityBacon
 	public void updateBlock()
     {
         int var1 = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
-        this.worldObj.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
         markBlockDirty(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
     }
 	

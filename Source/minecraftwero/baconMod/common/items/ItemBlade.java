@@ -1,11 +1,9 @@
 package minecraftwero.baconMod.common.items;
 
+import minecraftwero.baconMod.Bacon;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com.minecraftwero.bacon.Bacon;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

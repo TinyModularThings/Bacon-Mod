@@ -21,8 +21,6 @@ import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
 
-import com.minecraftwero.bacon.common.tile.TileEntityBacon;
-
 public class Heater extends TileEntityBacon implements IInventory, IFluidHandler
 {
 
@@ -169,36 +167,30 @@ public class Heater extends TileEntityBacon implements IInventory, IFluidHandler
 	    }
 
 
-	@Override
 	public String getInvName() {
 
 		return "Heater";
 	}
 
-	@Override
 	public boolean isInvNameLocalized() {
 		
 		return false;
 	}
 
-	@Override
 	public int getInventoryStackLimit() {
 
 		return 64;
 	}
 
-	@Override
 	public boolean isUseableByPlayer(EntityPlayer entityplayer) {
 		
 		return true;
 	}
 
-	@Override
 	public void openChest() 
 	{
 	}
 
-	@Override
 	public void closeChest() 
 	{
 	}
@@ -212,7 +204,7 @@ public class Heater extends TileEntityBacon implements IInventory, IFluidHandler
     public void updateBlock()
     {
         int var1 = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
-        this.worldObj.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
         markBlockDirty(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
     }
 	
@@ -520,6 +512,30 @@ public class Heater extends TileEntityBacon implements IInventory, IFluidHandler
 		}
 		
 		return TileEntityFurnace.isItemFuel(par1);
+	}
+
+	@Override
+	public String getInventoryName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean hasCustomInventoryName() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void openInventory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeInventory() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

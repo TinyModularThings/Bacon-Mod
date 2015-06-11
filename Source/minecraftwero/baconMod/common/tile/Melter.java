@@ -1,7 +1,7 @@
 package minecraftwero.baconMod.common.tile;
 
-import minecraftwero.bacon.common.core.helper.BaconWorld;
 import minecraftwero.baconMod.common.config.BaconItems;
+import minecraftwero.baconMod.common.core.helper.BaconWorld;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -36,7 +36,6 @@ public class Melter extends TileEntityBacon implements IInventory, IFluidHandler
     	return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, var1);
 	}
    
-	@Override
 	public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) 
 	{
 		this.readFromNBT(pkt.data);
@@ -342,5 +341,29 @@ public class Melter extends TileEntityBacon implements IInventory, IFluidHandler
 			}
 		}
 		return 0;
+	}
+
+	@Override
+	public String getInventoryName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean hasCustomInventoryName() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void openInventory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeInventory() {
+		// TODO Auto-generated method stub
+		
 	}
 }

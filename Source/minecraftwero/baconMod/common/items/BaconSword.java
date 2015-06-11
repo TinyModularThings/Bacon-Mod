@@ -1,5 +1,6 @@
 package minecraftwero.baconMod.common.items;
 
+import minecraftwero.baconMod.Bacon;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,7 +16,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.google.common.collect.Multimap;
-import com.minecraftwero.bacon.Bacon;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

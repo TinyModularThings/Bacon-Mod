@@ -120,7 +120,7 @@ public class EntitySloth extends EntityTameable
                     	{
                     		this.aiSit.setSitting(false);
                     		System.out.print("Disable Sit");
-                    		par1EntityPlayer.addChatComponentMessage("I will follow you");
+                    		par1EntityPlayer.addChatMessage("I will follow you");
                     	}
                     	else
                     	{

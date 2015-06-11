@@ -2,6 +2,7 @@ package minecraftwero.baconMod.common.items;
 
 import java.util.Random;
 
+import minecraftwero.baconMod.Bacon;
 import minecraftwero.baconMod.common.config.BaconItems;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.google.common.collect.Multimap;
-import com.minecraftwero.bacon.Bacon;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

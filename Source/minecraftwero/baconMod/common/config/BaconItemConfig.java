@@ -1,5 +1,6 @@
 package minecraftwero.baconMod.common.config;
 
+import minecraftwero.baconMod.Bacon;
 import minecraftwero.baconMod.common.blocks.BlockBaconMaker;
 import minecraftwero.baconMod.common.blocks.BlockBaconSapling;
 import minecraftwero.baconMod.common.blocks.MachineHeater;
@@ -29,9 +30,6 @@ import minecraftwero.baconMod.common.tile.Melter;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.FluidRegistry;
-
-import com.minecraftwero.bacon.Bacon;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

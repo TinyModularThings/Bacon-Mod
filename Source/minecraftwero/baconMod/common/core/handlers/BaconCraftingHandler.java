@@ -3,13 +3,13 @@ package minecraftwero.baconMod.common.core.handlers;
 import java.util.List;
 import java.util.Random;
 
-import cpw.mods.fml.common.IFuelHandler;
 import minecraftwero.baconMod.common.config.BaconItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.IFuelHandler;
 
 public class BaconCraftingHandler implements ICrafting, IFuelHandler
 {
