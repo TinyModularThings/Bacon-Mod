@@ -14,6 +14,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -69,15 +71,15 @@ public class EntitySloth extends EntityTameable
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.30000001192092896D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.30000001192092896D);
 
         if (this.isTamed())
         {
-            this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(25.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(25.0D);
         }
         else
         {
-            this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(8.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(8.0D);
         }
     }
 
@@ -89,7 +91,7 @@ public class EntitySloth extends EntityTameable
         {
             if (itemstack != null)
             {
-                if (itemstack.itemID == Block.leaves.blockID || itemstack.itemID == Block.sapling.blockID)
+                if (itemstack.getItem()() == Blocks.leaves || itemstack == Blocks.sapling)
                 {
                   
 
@@ -137,8 +139,7 @@ public class EntitySloth extends EntityTameable
             }
 
         }
-        else if (itemstack != null && itemstack.itemID == Item.appleGold.itemID && itemstack.getItemDamage() == 0)
-        {
+        else if(itemstack != null && itemstack.getItem() == Items.golden_apple && itemstack.getItemDamage() == 0)        {
             if (!par1EntityPlayer.capabilities.isCreativeMode)
             {
                 --itemstack.stackSize;
@@ -193,11 +194,12 @@ public class EntitySloth extends EntityTameable
     /**
      * Returns the item ID for the item the mob drops on death.
      */
-    protected int getDropItemId()
+    protected Item getDropItemId()
     {
-        return Item.leather.itemID;
+        return Items.apple;
     }
 
+    
     /**
      * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
      * par2 - Level of Looting used to kill this mob.
@@ -209,7 +211,7 @@ public class EntitySloth extends EntityTameable
 
         for (k = 0; k < j; ++k)
         {
-            this.dropItem(Item.leather.itemID, 1);
+            this.dropItem(Items.leather, 1);
         }
 
         j += this.rand.nextInt(1 + par2);
@@ -218,11 +220,11 @@ public class EntitySloth extends EntityTameable
         {
             if (this.isBurning())
             {
-                this.dropItem(BaconItems.rawBacon.itemID, 1);
+                this.dropItem(BaconItems.rawBacon, 1);
             }
             else
             {
-            	this.dropItem(Item.beefRaw.itemID, 1);
+            	this.dropItem(Items.porkchop, 1);
             }
 
         }
@@ -251,7 +253,7 @@ public class EntitySloth extends EntityTameable
     {
     	if(par1 != null)
     	{
-    		if(par1.getItem() == Item.appleRed)
+    		if(par1.getItem() == Items.apple)
     		{
     			return true;
     		}

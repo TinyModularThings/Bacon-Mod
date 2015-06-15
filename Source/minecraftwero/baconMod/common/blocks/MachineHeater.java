@@ -2,6 +2,7 @@ package minecraftwero.baconMod.common.blocks;
 
 import java.util.List;
 
+import minecraftwero.baconMod.Bacon;
 import minecraftwero.baconMod.common.config.BaconItems;
 import minecraftwero.baconMod.common.lib.BaconGuiIDs;
 import minecraftwero.baconMod.common.tile.Heater;
@@ -20,9 +21,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
-
-import com.minecraftwero.bacon.Bacon;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

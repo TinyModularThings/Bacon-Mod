@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -89,12 +90,12 @@ public class AdvancedBacon extends Item implements IExpBottle
 				}
 				else
 				{
-					par3.addChatMessage("Exp Bottle is Full");
+					par3.addChatComponentMessage(new ChatComponentText("Exp Bottle is Full"));
 				}
 			}
 			else
 			{
-				par3.addChatMessage("You need at least 1 Exp level");
+				par3.addChatComponentMessage(new ChatComponentText("You need at least 1 Exp level"));
 			}
 		}
 		else
@@ -210,7 +211,7 @@ public class AdvancedBacon extends Item implements IExpBottle
 		if(!par1.hasTagCompound())
 		{
 			NBTTagCompound par6 = new NBTTagCompound();
-			par6.setCompoundTag("BaconFood", new NBTTagCompound());
+			par6.setTag("BaconFood", new NBTTagCompound());
 			par6.getCompoundTag("BaconFood").setInteger("StoredExp", 0);
 			par1.setTagCompound(par6);
 		}

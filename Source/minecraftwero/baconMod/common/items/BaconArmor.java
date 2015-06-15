@@ -57,7 +57,7 @@ public class BaconArmor extends ItemArmor
 			return;
 		}
 		
-		if(par2.getCurrentArmor(0) != null && par2.getCurrentArmor(0).itemID == BaconItems.baconBoots.itemID)
+		if(par2.getCurrentArmor(0) != null && par2.getCurrentArmor(0).getItem() == BaconItems.baconBoots)
 		{
 			equickt[0] = true;
 		}
@@ -66,7 +66,7 @@ public class BaconArmor extends ItemArmor
 			equickt[0] = false;
 		}
 		
-		if(par2.getCurrentArmor(1) != null && par2.getCurrentArmor(1).itemID == BaconItems.baconLegs.itemID)
+		if(par2.getCurrentArmor(1) != null && par2.getCurrentArmor(1).getItem() == BaconItems.baconLegs)
 		{
 			equickt[1] = true;
 		}
@@ -75,7 +75,7 @@ public class BaconArmor extends ItemArmor
 			equickt[1] = false;
 		}
 		
-		if(par2.getCurrentArmor(2) != null && par2.getCurrentArmor(2).itemID == BaconItems.baconPlate.itemID)
+		if(par2.getCurrentArmor(2) != null && par2.getCurrentArmor(2).getItem() == BaconItems.baconPlate)
 		{
 			equickt[2] = true;
 		}
@@ -84,7 +84,7 @@ public class BaconArmor extends ItemArmor
 			equickt[2] = false;
 		}
 		
-		if(par2.getCurrentArmor(3) != null && par2.getCurrentArmor(3).itemID == BaconItems.baconHelmet.itemID)
+		if(par2.getCurrentArmor(3) != null && par2.getCurrentArmor(3).getItem() == BaconItems.baconHelmet)
 		{
 			equickt[3] = true;
 		}

@@ -1,8 +1,7 @@
-package minecraftwero.bacon;
+package minecraftwero.baconMod;
 
 import java.io.File;
 
-Hello
 import minecraftwero.baconMod.common.config.BaconConfig;
 import minecraftwero.baconMod.common.core.BaconCore;
 import minecraftwero.baconMod.common.core.BaconTab;

@@ -2,10 +2,11 @@ package minecraftwero.baconMod.common.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.world.World;
 
 
-public class BaconCake extends TileEntityBacon 
+public class BaconCake<INetworkManager> extends TileEntityBacon 
 {
 	public int eated = 0;
 	
@@ -15,11 +16,10 @@ public class BaconCake extends TileEntityBacon
     	NBTTagCompound var1 = new NBTTagCompound();
     	writeToNBT(var1);
     	var1.setInteger("Eated", eated);
-    	return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, var1);
+    	return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, var1);
 	}
    
-	@Override
-	public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) 
+	public void onDataPacket(INetworkManager net, S35PacketUpdateTileEntity pkt) 
 	{
 		this.readFromNBT(pkt.data);
 	}

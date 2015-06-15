@@ -46,11 +46,8 @@ public class BaconTool extends Item
 		name = par3; 
 		texture = par2;
 		speed = miningspeed;
-		MinecraftForge.setToolClass(this, toolkind, strenght);
 		this.setTextureName(par2);
 	}
-	
-
 	
 	public String getItemDisplayName(ItemStack par1ItemStack) 
 	{
@@ -87,13 +84,13 @@ public class BaconTool extends Item
 			return par1;
 		}
 		
-		if(par1.itemID == BaconItems.baconHoe.itemID && par3.canEat(false) && par3.isSneaking())
+		if(par1.getItem() == BaconItems.baconHoe && par3.canEat(false) && par3.isSneaking())
 		{
 			par3.setItemInUse(par1, this.getMaxItemUseDuration(par1));
 			
 		}
 		
-		if(par3.canEat(false) && par1.itemID != BaconItems.baconHoe.itemID)
+		if(par3.canEat(false) && par1.getItem() != BaconItems.baconHoe)
 		{
 			par3.setItemInUse(par1, this.getMaxItemUseDuration(par1));
 		}
@@ -138,7 +135,12 @@ public class BaconTool extends Item
 		return true;
 	}
 
-	
+	@Override
+	public int getHarvestLevel(ItemStack stack, String toolClass)
+    {
+		return 1;
+		
+    }
 	
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
@@ -146,7 +148,7 @@ public class BaconTool extends Item
         {
             return false;
         }
-        else if(BaconItems.baconHoe != null && par1ItemStack.itemID != BaconItems.baconHoe.itemID)
+        else if(BaconItems.baconHoe != null && par1ItemStack.getItem() != BaconItems.baconHoe)
         {
         	return false;
         }
@@ -162,22 +164,22 @@ public class BaconTool extends Item
                 return false;
             }
 
-            if (event.getResult() == Result.ALLOW)
+            if (event.getResult() == cpw.mods.fml.common.eventhandler.Event.Result.ALLOW)
             {
                 par1ItemStack.damageItem(1, par2EntityPlayer);
                 return true;
             }
 
-            int i1 = par3World.getBlockMetadata(par4, par5, par6);
-            int j1 = par3World.getBlockMetadata(par4, par5 + 1, par6);
+            Block i1 = par3World.getBlock(par4, par5, par6);
+            Block j1 = par3World.getBlock(par4, par5 + 1, par6);
 
-            if ((par7 == 0 || j1 != 0 || i1 != Blocks.grass.blockID) && i1 != Blocks.dirt.blockID)
+            if ((par7 == 0 || j1 != Blocks.air || i1 != Blocks.grass && i1 != Blocks.dirt))
             {
                 return false;
             }
             else
             {
-                Block block = Block.tilledField;
+                Block block = Blocks.farmland;
                 par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), block.stepSound.getBreakSound(), (block.stepSound.getVolume() + 1.0F) / 2.0F, block.stepSound.getPitch() * 0.8F);
 
                 if (par3World.isRemote)
@@ -186,7 +188,7 @@ public class BaconTool extends Item
                 }
                 else
                 {
-                    par3World.setBlock(par4, par5, par6, block.blockID);
+                    par3World.setBlock(par4, par5, par6, block);
                     par1ItemStack.damageItem(1, par2EntityPlayer);
                     return true;
                 }
